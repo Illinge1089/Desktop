@@ -1,8 +1,5 @@
 def calculate_discount(price, discount_percent):
-    """
-    Calculates the final price after applying a discount.
-    Applies discount only if it is 20% or higher.
-    """
+    
     if discount_percent >= 20:
         final_price = price - (price * (25 / 100))
         return final_price
