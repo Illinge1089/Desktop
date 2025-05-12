@@ -1,0 +1,10 @@
+chatSocket.onmessage = function(e) {
+    const data = JSON.parse(e.data);
+    if (data.reaction) {
+        const reactionBox = document.createElement('div');
+        reactionBox.textContent = `New reaction: ${data.reaction}`;
+        document.querySelector('#chat-log').appendChild(reactionBox);
+    } else {
+        // existing chat message display
+    }
+};

@@ -1,0 +1,14 @@
+<span class="emoji-reactions">
+    <button onclick="sendReaction('😊')">😊</button>
+    <button onclick="sendReaction('😢')">😢</button>
+    <button onclick="sendReaction('😡')">😡</button>
+</span>
+
+<script>
+    function sendReaction(emoji) {
+        chatSocket.send(JSON.stringify({
+            'type': 'reaction',
+            'emoji': emoji
+        }));
+    }
+</script>
