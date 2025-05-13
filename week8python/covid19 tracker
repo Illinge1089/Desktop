@@ -1,0 +1,3 @@
+/data          # For datasets
+/notebooks     # For Jupyter Notebooks
+/outputs       # For saved charts
