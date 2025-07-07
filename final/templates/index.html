@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Recommender</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Find Jobs in Your Area</h1>
+    <form method="post" action="/recommend">
+        <input name="location" placeholder="Your Location" required>
+        <input name="interest" placeholder="Job Interest (e.g. IT, Cleaning)" required>
+        <button type="submit">Find Jobs</button>
+    </form>
+
+    {% if jobs %}
+        <h2>Recommended Jobs:</h2>
+        <ul>
+            {% for job in jobs %}
+                <li><strong>{{ job['title'] }}</strong> - {{ job['location'] }}<br>{{ job['description'] }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
